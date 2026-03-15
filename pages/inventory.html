@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+<link rel="stylesheet" href="style_inventory.css">
+</head>
+<style>
+    ul{
+        list-style: none;
+    }
+</style>
+<body>
+  <div class="container">
+        <div id="sidebar-container">
+        </div> 
+        <div class="main-content">
+    <h1 class="hd"> Inventory </h1>
+    <form action="" class="search-form">
+      <i class='bx bx-search search-icon'></i>
+      <input type="text" placeholder="Search" class="search-input" />
+    </form>
+    <div id="list-container">
+        <button id="addItemBtn" onclick="openAddModal()">Add Product</button>
+        <div class="list-row header">
+    <div>Name</div>
+    <div>Stock</div>
+    <div>Price</div>
+    <div></div>
+</div>
+        <div id="inventory-list"></div>
+    </div>
+</div>
+<div id="edit-modal" class="modal">
+    <div class="modal-content">
+        <h2>Edit Product</h2>
+        <input id="edit-name" placeholder="Product Name">
+        <input id="edit-price" placeholder="Price">
+        <input id="edit-stock" placeholder="Stock">
+        <div class="modal-buttons">
+        <button class="ConfirmBtn"onclick="saveEdit()">Save</button>
+        <button class="CancelBtn"onclick="closeEditModal()">Cancel</button>
+    </div>
+    </div>
+</div>
+
+<div id="add-modal" class="modal">
+    <div class="modal-content">
+        <h3>Add Product</h3>
+        <input id="product-name" placeholder="Product Name">
+        <input id="product-price" type="number" placeholder="Price">
+        <input id="product-stock" type="number" placeholder="Stock">
+        <div class="modal-buttons">
+        <button class="ConfirmBtn"onclick="addProduct()">Add</button>
+        <button class="CancelBtn"onclick="closeAddModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="delete-modal" class="modal">
+    <div class="modal-content">
+        <h3>Do you want to delete this item?</h3>
+        <div class="modal-buttons">
+        <button class="ConfirmBtn"onclick="removeProduct()">Remove</button>
+        <button class="CancelBtn"onclick="closeDeleteModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+     <script src="javascript/products.js"></script>
+     <script src="javascript/sales.js"></script>
+     <script src="javascript/inventory.js"></script>
+     <script src="javascript/sidebar.js"></script>
+</body>
+</html>

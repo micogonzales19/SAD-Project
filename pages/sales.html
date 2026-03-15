@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+  <link rel="stylesheet" href="sales-style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <div id="sidebar-container"></div>
+    <main class="main sales-page">
+      <h1>Sales</h1>
+
+      <form action="" class="search-form">
+        <input type="text" placeholder="Search" class="search-input" />
+      </form>
+
+      <div class="sales-container">
+        <div class="product-area">
+          <div class="fake-scrollbar">
+            <div class="scroll-thumb"></div>
+          </div>
+
+          <div id="product-section">
+            <div id="product-list"></div>
+          </div>
+        </div>
+
+        <div id="cart-section">
+  <p>Order Details</p>
+
+  <div class="cart-header">
+    <span class="header-name">Product</span>
+    <span class="header-qty">Qty</span>
+    <span class="header-price">Price</span>
+    <span class="header-subtotal">Subtotal</span>
+  </div>
+
+  <div id="cart-list"></div>
+
+  <button id="cancelOrderBtn">Cancel Order</button>
+  <button onclick="completeSale()">Complete Order</button>
+</div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="javascript/products.js"></script>
+  <script src="javascript/sales.js"></script>
+  <script src="javascript/inventory.js"></script>
+  <script src="javascript/sidebar.js"></script>
+</body>
+</html>

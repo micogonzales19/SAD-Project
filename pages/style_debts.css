@@ -1,0 +1,413 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff6ec;
+}
+.container {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+    
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(173, 52, 62);
+    border-bottom-right-radius: 70px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#toggler {
+    display: none;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 1.75rem;
+    background-color: rgb(206, 112, 120);
+    transition: all 0.25s ease-in-out;
+}
+
+.toggle-btn span {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    width: 85px;
+    min-width: 85px;
+    flex: 1 1 auto;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.sidebar #toggler:checked ~ .sidebar-nav {
+    width: 260px;
+    min-width: 260px;
+}
+
+.sidebar #toggler:not(:checked) ~ .toggle-btn span {
+    display: none;
+}
+
+.sidebar #toggler:not(:checked) ~ .sidebar-nav .sidebar-link span {
+    display: none;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0.625rem;
+    color: white;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    
+}
+
+.sidebar #toggler:checked ~ .sidebar-nav .sidebar-link {
+    justify-content: flex-start;
+    padding: 0.625rem 1.625rem;
+}
+
+
+.sidebar-link i {
+    font-size: 1.5em;
+    margin-right: 0.75rem;
+    color: rgb(173, 52, 62);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.sidebar-item span{
+    font-weight: 650;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(206, 112, 120);
+    border-bottom-right-radius: 30px;
+    border-left: 3px solid white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.sidebar-nav .sidebar-item {
+    margin-bottom: 0.5rem; 
+}
+
+.title {
+    font-size: 100px;
+    font-weight: 600;
+    color: #677757;
+    margin-bottom: 10px;
+}
+
+.sub {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.main h2 {
+    margin-bottom: 20px;
+    color: #3c5e3c;
+}
+.hd{
+  color:#556b52;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+#debt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
+
+#payDebt-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#payDebt-modal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#addDebt-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#addDebt-modal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#addDebtor-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#addDebtor-modal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#removeDebtor-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#removeDebtor-modal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#debt-container{
+    width: 900px;
+    margin:auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow: 2px 2px 3px 2px rgb(199, 198, 198);
+}
+#addDebtorBtn{
+    margin-bottom:10px;
+    padding:6px 12px;
+    border:none;
+    border-radius:6px;
+    background:#b43b3b;
+    color:white;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+}
+.debt-header{
+    display:grid;
+    grid-template-columns:50px 1fr 1fr 100px 100px;
+    background:#d8a9a9;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+.debt-row{
+   display:grid;
+    grid-template-columns:50px 1fr 1fr 100px 100px;
+    background:#FAF9F6;
+    padding:10px;
+    border-radius:8px;
+}
+.delete-btn{
+    background:#e57373;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+}
+
+.pay-btn{
+    background:#b43b3b;
+    color:white;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.add-btn{
+    background:white;
+    color:#b43b3b;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+button:hover{
+    opacity:0.85;
+}
+
+.debt-grid {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.ConfirmBtn{
+   background:#b43b3b;
+    color:white;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    vertical-align: auto;
+    align-items: center;
+    
+}
+
+.CancelBtn{
+    background:white;
+    color:#b43b3b;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    vertical-align: auto;
+    align-items: center;
+    padding: 5px;
+}
+
+.debt-row:hover{
+    background:rgb(243, 242, 242);
+    transform:scale(1.01);
+}
+
+.debt-row span{
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    font-weight:600;
+}
+
+.debt-header,
+.debt-row{
+    display:grid;
+    grid-template-columns:50px 1fr 1fr 100px 100px;
+    align-items:center;
+}
+
+.debt-header div,
+.debt-row span,
+.debt-row button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-content input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: "Montserrat", sans-serif;
+}
+
+.modal-content{
+     width: 450px;
+     padding: 30px;
+     border-radius: 10px;
+     display: flex;
+    flex-direction: column;
+}
+
+.modal-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.main-content{
+    flex:1;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.hd{
+    width:900px;
+    text-align:center;
+    color:#556b52;
+    margin-top: 110px;
+    margin-bottom: -170px;
+}

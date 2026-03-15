@@ -1,0 +1,384 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff6ec;
+}
+.container {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+    
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(173, 52, 62);
+    border-bottom-right-radius: 70px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#toggler {
+    display: none;
+}
+
+.toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 1.75rem;
+    background-color: rgb(206, 112, 120);
+    transition: all 0.25s ease-in-out;
+}
+
+.toggle-btn span {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    width: 85px;
+    min-width: 85px;
+    flex: 1 1 auto;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.sidebar #toggler:checked ~ .sidebar-nav {
+    width: 260px;
+    min-width: 260px;
+}
+
+.sidebar #toggler:not(:checked) ~ .toggle-btn span {
+    display: none;
+}
+
+.sidebar #toggler:not(:checked) ~ .sidebar-nav .sidebar-link span {
+    display: none;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0.625rem;
+    color: white;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+    transition: all 0.25s ease-in-out;
+    text-decoration: none;
+    
+}
+
+.sidebar #toggler:checked ~ .sidebar-nav .sidebar-link {
+    justify-content: flex-start;
+    padding: 0.625rem 1.625rem;
+}
+
+
+.sidebar-link i {
+    font-size: 1.5em;
+    margin-right: 0.75rem;
+    color: rgb(173, 52, 62);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.sidebar-item span{
+    font-weight: 650;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(206, 112, 120);
+    border-bottom-right-radius: 30px;
+    border-left: 3px solid white;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 1.5rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.sidebar-nav .sidebar-item {
+    margin-bottom: 0.5rem; 
+}
+
+.title {
+    font-size: 100px;
+    font-weight: 600;
+    color: #677757;
+    margin-bottom: 10px;
+}
+
+.sub {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.main h2 {
+    margin-bottom: 20px;
+    color: #3c5e3c;
+}
+#add-modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#add-modal .modal-content{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#edit-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#edit-modal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#delete-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    justify-content: center;
+    align-items: center;
+}
+
+#delete-modal .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body{
+  background:#e7ded2;
+  font-family: Arial;
+}
+
+.inventory-page{
+  width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+h1{
+  color:#556b52;
+}
+
+#list-container{
+    width: 900px;
+    margin:auto;
+    background:#b43b3b;
+    padding:20px;
+    padding-bottom: 50px;
+    border-radius:10px;
+    box-shadow: 2px 2px 3px 2px rgb(199, 198, 198);
+}
+#addItemBtn{
+    margin-bottom:10px;
+    padding:6px 12px;
+    border-color: white;
+    border-radius:6px;
+    background:#b43b3b;
+    color:white;
+    border:solid;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+}
+
+.list-row,
+.header{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    align-items: center;
+    background:#f6ecec;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.ConfirmBtn{
+   background:#b43b3b;
+    color:white;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    vertical-align: auto;
+    align-items: center;
+    
+}
+
+.CancelBtn{
+    background:white;
+    color:#b43b3b;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    vertical-align: auto;
+    align-items: center;
+    padding: 5px;
+}
+
+.modal-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.header{
+    background:transparent;
+    font-weight:bold;
+    color:white;
+}
+
+.search-form{
+    width: 900px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: white;
+    border: 2px solid #b43b3b;
+    border-radius: 30px;
+    padding: 8px 15px;
+}
+
+.search-icon{
+    font-size: 20px;
+    color: #b43b3b;
+}
+
+.search-input{
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.edit-btn{
+  background:#b43b3b;
+    color:white;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.remove-btn{
+  background:white;
+    color:#b43b3b;
+    border:solid;
+    border-color: #b43b3b;
+    border-radius:6px;
+    cursor:pointer;
+    padding:5px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.list-row span{
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    font-weight:600;
+}
+
+.list-header div,
+.list-row span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.modal-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.main-content{
+    flex: 1;
+    padding: 50px;
+}
+
+.hd{
+    text-align:center;
+    margin-bottom:20px;
+    color:#556b52;
+}
+
+.modal-content input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: "Montserrat", sans-serif;
+}
